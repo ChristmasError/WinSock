@@ -1,5 +1,4 @@
 # WinSock
-# WinSock
 对WinSocket库封装而成的类  
 **LoadSocektLib()/UnloadSocketLib()**                               装/卸WinSocket库  
 **CreateSocket()/CreateWSASocket()**                                创建socket套接字/WSAsocket套接字  
