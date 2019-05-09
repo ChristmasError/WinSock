@@ -115,10 +115,10 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="WinSock.cpp" />
+    <ClCompile Include="winsock_class.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="WinSock.h" />
+    <ClInclude Include="winsock_class.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
