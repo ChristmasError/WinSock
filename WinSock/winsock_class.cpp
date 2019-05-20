@@ -1,14 +1,25 @@
 #pragma once
 
-#include"winsock_class.h"
-#include<iostream>
+#include "winsock_class.h"
+#include <iostream>
 WinSock::WinSock()
 {
 	// 初始化
-	socket = 0;
+	socket = INVALID_SOCKET;
 	addr = { 0 };
 	ip = NULL;
 	port = 0;
+}
+
+WinSock::~WinSock()
+{
+	if (socket != INVALID_SOCKET)
+	{
+		closesocket(socket);
+		socket = INVALID_SOCKET;
+	}
+	//if(ip!=NULL)
+	//	delete[] ip;
 }
 /////////////////////////////////////////////////////////////////
 // 加载&卸载WinSocket库
@@ -176,9 +187,7 @@ void WinSock::Close()
 	std::cout << "连接关闭! \n";
 	closesocket(socket);
 }
-WinSock::~WinSock()
-{
-}
+
 /////////////////////////////////////////////////////////////////
 // private:
 void WinSock::_ShowMessage(const char* msg, ...) const
